@@ -29,6 +29,6 @@ curl --header "Content-Type: application/json" \
 ## Running tests
 
 - Change the `DATABASE_URI` value to `sqlite:///test.db`
-- Run tests with `docker-compose exec web pytest .`
+- Run tests with `docker-compose exec app pytest .`
 
 
