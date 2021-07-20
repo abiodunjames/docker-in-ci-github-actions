@@ -2,8 +2,6 @@ from typing import Iterator
 
 import pytest
 from fastapi.testclient import TestClient
-from starlette.testclient import TestClient
-
 from app.api.db import Links, database, engine, metadata
 from app.main import app
 
@@ -22,7 +20,7 @@ async def link() -> None:
     query = Links.insert()
     values = {
         "id": "12345",
-        "short_url": "https://tier.app/12345",
+        "short_url": "https://localhost:8000/12345",
         "original_url": "https://go.me",
         "hit": 0,
     }

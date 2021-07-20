@@ -21,7 +21,7 @@ async def test_create() -> None:
 async def test_get(link: None) -> None:
     response = await get("12345")
     assert response.id == "12345"
-    assert response.short_url == "https://tier.app/12345"
+    assert response.short_url == "https://localhost:8000/12345"
     assert response.hit == 0
 
 
