@@ -1,0 +1,19 @@
+version: "3.7"
+services:
+  db:
+    image: postgres:12.1-alpine
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=linkapp
+
+  app:
+    build: .
+    command: uvicorn app.main:app --reload --workers 1 --host 0.0.0.0 --port 8000
+    volumes:
+      - .:/app/
+    ports:
+      - 80:8000
+    environment:
+      - DATABASE_URI:postgresql://user:password@db/linkapp
+      - DOMAIN_NAME:http://localhost:8000
