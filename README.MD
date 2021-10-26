@@ -23,7 +23,6 @@ curl --header "Content-Type: application/json" \
 - Access a shortened url
   ```
   curl  http://localhost:8000/GHO97J2Xne0
-  
   ```
 
 ## Running tests
