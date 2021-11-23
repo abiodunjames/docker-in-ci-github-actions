@@ -6,11 +6,11 @@ POSTGRES_USER=user
 POSTGRES_DB=linksapp
 POSTGRES_PASSWORD=password
 DATABASE_URI='postgresql://user:password@db/linksapp'
-DOMAIN_NAME=http://localhost:8000
+DOMAIN_NAME=http://localhost:3000
 ```
 - Run `docker-compose up -d --build`
 
-- Check API docs `http://localhost:8000/docs`
+- Check API docs `http://localhost:3000/docs`
 
 - Get a short url 
 
@@ -18,11 +18,11 @@ DOMAIN_NAME=http://localhost:8000
 curl --header "Content-Type: application/json" \
   --request POST \
   --data '{"url":"https://google.com"}' \
-  http://localhost:8000/api/urls
+  http://localhost:3000/api/urls
 ```
 - Access a shortened url
   ```
-  curl  http://localhost:8000/GHO97J2Xne0
+  curl  http://localhost:3000/GHO97J2Xne0
   
   ```
 

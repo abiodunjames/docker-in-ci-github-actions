@@ -9,7 +9,7 @@ from app.api.repository import create, get, link_exists, update_link_hit
 async def test_create() -> None:
     url = Url(
         id="absTy461",
-        short_url="http://tier.app/absTy461",
+        short_url="http://localhost:3000/absTy461",
         original_url="https://fb.com",
         hit=0,
     )
@@ -21,7 +21,7 @@ async def test_create() -> None:
 async def test_get(link: None) -> None:
     response = await get("12345")
     assert response.id == "12345"
-    assert response.short_url == "https://localhost:8000/12345"
+    assert response.short_url == "https://localhost:3000/12345"
     assert response.hit == 0
 
 

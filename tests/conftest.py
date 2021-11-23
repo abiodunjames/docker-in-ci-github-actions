@@ -20,7 +20,7 @@ async def link() -> None:
     query = Links.insert()
     values = {
         "id": "12345",
-        "short_url": "https://localhost:8000/12345",
+        "short_url": "https://localhost:3000/12345",
         "original_url": "https://go.me",
         "hit": 0,
     }
