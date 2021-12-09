@@ -1,6 +1,6 @@
 FROM python:3.9-slim
 
-WORKDIR /app
+WORKDIR /src
 
 # copy requirements.txt file
 COPY requirements.txt .
@@ -15,7 +15,7 @@ COPY . .
 EXPOSE 3000
 
 # Create user to run the container process.
-RUN useradd -M appuser && chmod a+w /app
+RUN useradd -M appuser && chmod a+w /src
 USER appuser
 
 CMD [ "sh", "-c", "uvicorn app.main:app --reload --workers 1 --host 0.0.0.0 --port 3000" ]
